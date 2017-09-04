@@ -1,7 +1,5 @@
-akfjlkda
-wkdls
-fdbm;svf
-svmd;'d
-,bf;eb
-ebm; e',b
-e
+#include<stdio.h>
+void main()
+{
+    printf("hello world");
+}
