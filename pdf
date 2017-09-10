@@ -1,0 +1,31 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int[] h = new int[26];
+        int i,max=0,l,x;
+        char ch;
+        for(int h_i=0; h_i < 26; h_i++){
+            h[h_i] = in.nextInt();
+        }
+        String word = in.next();
+        l=word.length();
+        for(i=0;i<l;i++)
+        {
+            ch=word.charAt(i);
+            x=(int)ch;
+            //System.out.println(ch+"-"+x);
+            x=x-97;
+            //System.out.println(x);
+            if(h[x]>max)
+                max=h[x];
+        }
+        System.out.println(max*l);
+    }
+}
