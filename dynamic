@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */ 
+    int N, Q;
+    scanf("%d %d", &N, &Q);
+    int lastans = 0;
+    int ** sequences = calloc(sizeof(int *), N);
+    int * sizes = calloc(sizeof(int), N);
+    for(int i = 0; i < N; i++){
+        sequences[i] = malloc(0);
+        sizes[i] = 0;
+    }
+    for(int i = 0; i < Q; i++){
+        int type, x, y;
+        scanf("%d %d %d", &type, &x, &y);
+        if(type == 1){
+            x = x ^ lastans;
+            x = x % N;
+            sizes[x]++;
+            sequences[x] = realloc(sequences[x], sizes[x] * sizeof(int));
+            sequences[x][sizes[x] - 1] = y;
+        }
+        else if (type == 2){
+            x = x ^ lastans;
+            x = x % N;
+            lastans = sequences[x][y % sizes[x]];
+            printf("%d\n", lastans);
+        }
+    }
+    return 0;
+}
