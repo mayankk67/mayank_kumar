@@ -1,0 +1,42 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner s=new Scanner(System.in);
+        int t;
+        t=s.nextInt();
+        String sum;
+        int i,j;
+        while(t--!=0)
+        {
+        int n;
+        sum="";
+        n=s.nextInt();
+        if(n%3==0)
+            for(i=1;i<=n;i++)
+            sum+='5';
+        else if(n%5==0)
+            for(i=1;i<=n;i++)
+            sum+='3';
+        else if(n<3)
+            sum="-1";
+        else 
+        {
+            
+            for(i=0;i<(n-5);i++)
+            {
+                sum+='5';
+            }
+            for(i=0;i<5;i++)
+            {
+                sum+='3';
+            }
+        }
+        System.out.println(sum);
+
+        }
+    }
+}
