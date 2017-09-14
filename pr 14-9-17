@@ -1,0 +1,29 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    long int n,j,ar[10000],a,b,t,i,val,sum=0;
+    cin>>n>>t;
+    for(i=0;i<n;i++)
+        ar[i]=0;
+    for(i=0;i<t;i++)
+    {
+        cin>>a>>b>>val;
+        for(j=a-1;j<b;j++)
+            ar[j]+=val;
+    }
+    for(i=0;i<n;i++)
+    {
+        //cout<<ar[i]<<endl;
+        sum=sum+ar[i];
+    }
+    sum=sum/n;
+    cout<<sum;
+    return 0;
+}
