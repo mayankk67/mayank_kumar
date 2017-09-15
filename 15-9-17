@@ -1,0 +1,48 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+
+    public static void main(String[] args) 
+    {
+        Scanner in = new Scanner(System.in);
+        String st,str,news;
+        String com;
+        int t;
+        t=in.nextInt();
+        st=in.nextLine();
+        while(t--!=0)
+        {
+        st=in.nextLine();
+        com=in.nextLine();
+        int i,l,j,flag=0;
+        //news="";
+        char ch;
+        l=st.length();
+        
+        str=(st.toUpperCase());
+        for(i=0;i<l;i++)
+        {
+            news="";
+            for(j=i;j<l;j++)
+            {
+                ch=str.charAt(j);
+                news+=ch;
+                if(com.equals(news))
+                {flag=1;
+                break;}
+            }
+            if(flag==1) break;
+            
+        }
+        if(flag==0)
+        System.out.println("NO");
+        else System.out.println("YES");
+    }
+}
+}        
+        
