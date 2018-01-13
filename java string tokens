@@ -1,0 +1,26 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+       
+        String s = scan.nextLine(); 
+        s=s.trim();
+        if(s.length()==0)
+            System.out.println("0");
+        else
+        {
+        
+        // Write your code here.
+        String wrd="[-\\t,;.?!:@\\[\\] (){}_*\'/]+";
+        String ar[]=s.split(wrd);
+       
+        System.out.println(ar.length);
+        for(String s1:ar)
+            System.out.println(s1);
+        }
+        scan.close();
+    }
+}
